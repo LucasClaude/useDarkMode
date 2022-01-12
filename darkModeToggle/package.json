@@ -1,0 +1,36 @@
+{
+  "name": "use-dark-mode-toggle",
+  "version": "1.0.1",
+  "description": "Use this this simple hook to integrate a custom made dark/light mode toggle into your app",
+  "main": "use-dark-mode-toggle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasClaude/useDarkMode.git"
+  },
+  "keywords": [
+    "dark",
+    "mode",
+    "light",
+    "mode",
+    "toggle",
+    "react",
+    "theme"
+  ],
+  "author": "Lucas Claude",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasClaude/useDarkMode/issues"
+  },
+  "homepage": "https://github.com/LucasClaude/useDarkMode#readme",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "react-responsive": "^9.0.0-beta.5"
+  }
+}
