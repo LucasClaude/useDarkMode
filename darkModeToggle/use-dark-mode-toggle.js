@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import "./styles.scss";
 import clsx from "clsx";
@@ -9,7 +9,9 @@ import { ReactComponent as ToggleBar } from "./SVG/ToggleBar.svg";
 import { ReactComponent as Toggle } from "./SVG/ToggleButton.svg";
 
 export const useDarkModeToggle = () => {
-  const [theme, setActiveTheme] = useState(localStorage?.getItem("currentTheme"));
+  const [theme, setActiveTheme] = useState(
+    localStorage?.getItem("currentTheme")
+  );
 
   const isDark = theme ? (theme === "dark" ? true : false) : undefined;
 
@@ -25,7 +27,7 @@ export const useDarkModeToggle = () => {
     const isSystemDark = !isDark;
     const newTheme = isSystemDark ? "dark" : "light";
     setActiveTheme(newTheme);
-    localStorage?.setItem('currentTheme', newTheme);
+    localStorage?.setItem("currentTheme", newTheme);
   };
 
   useEffect(() => {
@@ -47,13 +49,17 @@ export const useDarkModeToggle = () => {
     }
   }, [value]);
 
-  return {
-    toggleButton: (
+  const returnToggle = () => {
+    return (
       <ToggleButton
         onClick={setTheme}
         currentTheme={isDark ? "dark" : "light"}
       />
-    ),
+    );
+  };
+
+  return {
+    toggleButton: returnToggle(),
     theme,
   };
 };
@@ -69,7 +75,7 @@ const ToggleButton = ({ onClick, currentTheme }) => {
     );
   }, [currentTheme]);
 
-  const secondaryColor = isDark ? '#4666ab' : 'white';
+  const secondaryColor = isDark ? "#4666ab" : "white";
 
   return (
     <button className="toggle-button" onClick={onClick}>
@@ -91,4 +97,3 @@ const ToggleButton = ({ onClick, currentTheme }) => {
     </button>
   );
 };
-

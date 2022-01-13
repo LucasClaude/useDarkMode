@@ -1,6 +1,6 @@
 {
   "name": "use-dark-mode-toggle",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Use this this simple hook to integrate a custom made dark/light mode toggle into your app",
   "main": "use-dark-mode-toggle.js",
   "scripts": {
